@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {StyleSheet, View} from "react-native";
+import {StyleSheet, TouchableOpacity, View} from "react-native";
 import {ListItem, Text} from "react-native-elements";
 
 
@@ -24,6 +24,10 @@ class UserList extends React.Component {
         };
     }
 
+    onPress(data) {
+        this.props.navigation.navigate('Details', {user: data});
+    }
+
     render() {
         return (
             <View>
@@ -32,11 +36,13 @@ class UserList extends React.Component {
                 {
                     this.state.users && this.state.users.map((item, key) => {
                         return (
-                            <ListItem key={key} bottomDivider>
-                                <ListItem.Content>
-                                    <ListItem.Title>{item.firstname} {item.lastname}</ListItem.Title>
-                                </ListItem.Content>
-                            </ListItem>
+                            <TouchableOpacity key={key} onPress={() => this.onPress(item)}>
+                                <ListItem bottomDivider>
+                                    <ListItem.Content>
+                                        <ListItem.Title>{item.firstname} {item.lastname}</ListItem.Title>
+                                    </ListItem.Content>
+                                </ListItem>
+                            </TouchableOpacity>
                         );
                     })
                 }

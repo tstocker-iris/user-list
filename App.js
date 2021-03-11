@@ -10,25 +10,22 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { Avatar } from 'react-native-elements';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import ListScreen from './Screens/ListScreen/ListScreen'
+import DetailsScreen from "./Screens/DetailsScreen/DetailsScreen";
 
 const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <View>
       <NavigationContainer>
-
         <SafeAreaProvider>
-          <Header
-              leftComponent={{ icon: 'menu', color: '#fff' }}
-              centerComponent={{ text: 'Dendo Jitensha', style: { color: '#fff' } }}
-              rightComponent={{ icon: 'home', color: '#fff' }}
-          />
-          <UserList />
+          <Stack.Navigator initialRouteName="List">
+            <Stack.Screen name="List" component={ListScreen} />
+            <Stack.Screen name="Details" component={DetailsScreen} />
+          </Stack.Navigator>
           <StatusBar style="auto" />
         </SafeAreaProvider>
       </NavigationContainer>
-    </View>
   );
 }
 
