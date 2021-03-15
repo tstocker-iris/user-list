@@ -20,8 +20,18 @@ export default function App() {
       <NavigationContainer>
         <SafeAreaProvider>
           <Stack.Navigator initialRouteName="List">
-            <Stack.Screen name="List" component={ListScreen} />
-            <Stack.Screen name="Details" component={DetailsScreen} />
+            <Stack.Screen name="List"
+                          options={{
+                            title: 'Liste des utilisateurs',
+                          }}
+                          component={ListScreen}
+            />
+            <Stack.Screen name="Details"
+                          options={({ route, navigation }) => ({
+                              title: 'Détails de ' + route.params.user.firstname + ' ' + route.params.user.lastname,
+                          })}
+                          component={DetailsScreen}
+            />
           </Stack.Navigator>
           <StatusBar style="auto" />
         </SafeAreaProvider>

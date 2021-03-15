@@ -20,6 +20,78 @@ class UserList extends React.Component {
                     firstname: "Bruce",
                     lastname: "Wayne",
                 },
+                {
+                    firstname: "John",
+                    lastname: "Doe",
+                },
+                {
+                    firstname: "Clark",
+                    lastname: "Kent",
+                },
+                {
+                    firstname: "Bruce",
+                    lastname: "Wayne",
+                },
+                {
+                    firstname: "John",
+                    lastname: "Doe",
+                },
+                {
+                    firstname: "Clark",
+                    lastname: "Kent",
+                },
+                {
+                    firstname: "Bruce",
+                    lastname: "Wayne",
+                },
+                {
+                    firstname: "John",
+                    lastname: "Doe",
+                },
+                {
+                    firstname: "Clark",
+                    lastname: "Kent",
+                },
+                {
+                    firstname: "Bruce",
+                    lastname: "Wayne",
+                },
+                {
+                    firstname: "John",
+                    lastname: "Doe",
+                },
+                {
+                    firstname: "Clark",
+                    lastname: "Kent",
+                },
+                {
+                    firstname: "Bruce",
+                    lastname: "Wayne",
+                },
+                {
+                    firstname: "John",
+                    lastname: "Doe",
+                },
+                {
+                    firstname: "Clark",
+                    lastname: "Kent",
+                },
+                {
+                    firstname: "Bruce",
+                    lastname: "Wayne",
+                },
+                {
+                    firstname: "John",
+                    lastname: "Doe",
+                },
+                {
+                    firstname: "Clark",
+                    lastname: "Kent",
+                },
+                {
+                    firstname: "Bruce",
+                    lastname: "Wayne",
+                },
             ],
         };
     }
@@ -31,7 +103,7 @@ class UserList extends React.Component {
     render() {
         return (
             <View>
-                <Text h1 h1Style={styles.title}>Liste des utilisateurs</Text>
+                {/*<Text h1 h1Style={styles.title}>Liste des utilisateurs</Text>*/}
 
                 {
                     this.state.users && this.state.users.map((item, key) => {

@@ -1,26 +1,29 @@
 import React, { Component } from 'react';
-import {StyleSheet, View} from "react-native";
-import {Text} from "react-native-elements";
+import DetailsComponent from "../../DetailsComponent";
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+
+const Tab = createMaterialTopTabNavigator();
 
 class DetailsScreen extends React.Component {
     render() {
-        console.log(this.props);
         return (
-            <View style={styles.container}>
-                <Text h1>Details utilisateur</Text>
-                <Text>{this.props.route.params.user.firstname} {this.props.route.params.user.lastname}</Text>
-            </View>
-        );
+            <Tab.Navigator>
+                <Tab.Screen name="UserDetails"
+                            options={{
+                                title: 'Détails',
+                            }}
+                            component={() => <DetailsComponent user={this.props.route.params.user} />}
+                />
+                <Tab.Screen name="OrderList"
+                            options={{
+                                title: 'Commandes',
+                            }}
+                            component={() => <DetailsComponent user={this.props.route.params.user} />}
+                />
+            </Tab.Navigator>
+        )
     }
 }
 
-
-const styles = StyleSheet.create({
-    container: {
-        marginLeft: '20px;',
-        marginRight: '20px;',
-
-    },
-});
 
 export default DetailsScreen;
