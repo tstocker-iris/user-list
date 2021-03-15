@@ -12,6 +12,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import ListScreen from './Screens/ListScreen/ListScreen'
 import DetailsScreen from "./Screens/DetailsScreen/DetailsScreen";
+import CommentExampleComponent from "./CommentExampleComponent";
 
 const Stack = createStackNavigator();
 
@@ -19,7 +20,7 @@ export default function App() {
   return (
       <NavigationContainer>
         <SafeAreaProvider>
-          <Stack.Navigator initialRouteName="List">
+          <Stack.Navigator initialRouteName="ApiTest">
             <Stack.Screen name="List"
                           options={{
                             title: 'Liste des utilisateurs',
@@ -31,6 +32,9 @@ export default function App() {
                               title: 'Détails de ' + route.params.user.firstname + ' ' + route.params.user.lastname,
                           })}
                           component={DetailsScreen}
+            />
+            <Stack.Screen name="ApiTest"
+                          component={CommentExampleComponent}
             />
           </Stack.Navigator>
           <StatusBar style="auto" />

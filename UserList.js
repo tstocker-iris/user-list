@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {StyleSheet, TouchableOpacity, View} from "react-native";
+import {FlatList, StyleSheet, TouchableOpacity, View} from "react-native";
 import {ListItem, Text} from "react-native-elements";
 
 
@@ -103,12 +103,11 @@ class UserList extends React.Component {
     render() {
         return (
             <View>
-                {/*<Text h1 h1Style={styles.title}>Liste des utilisateurs</Text>*/}
-
-                {
-                    this.state.users && this.state.users.map((item, key) => {
+                <FlatList
+                    data={this.state.users}
+                    renderItem={({item, index}) => {
                         return (
-                            <TouchableOpacity key={key} onPress={() => this.onPress(item)}>
+                            <TouchableOpacity onPress={() => this.onPress(item)}>
                                 <ListItem bottomDivider>
                                     <ListItem.Content>
                                         <ListItem.Title>{item.firstname} {item.lastname}</ListItem.Title>
@@ -116,9 +115,8 @@ class UserList extends React.Component {
                                 </ListItem>
                             </TouchableOpacity>
                         );
-                    })
-                }
-
+                    }}
+                />
             </View>
         );
     }
