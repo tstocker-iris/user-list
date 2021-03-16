@@ -20,7 +20,7 @@ export default function App() {
   return (
       <NavigationContainer>
         <SafeAreaProvider>
-          <Stack.Navigator initialRouteName="ApiTest">
+          <Stack.Navigator initialRouteName="List">
             <Stack.Screen name="List"
                           options={{
                             title: 'Liste des utilisateurs',

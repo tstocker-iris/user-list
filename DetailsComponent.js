@@ -24,10 +24,10 @@ class DetailsComponent extends React.Component {
                 />
                 <View style={styles.container}>
                     {this.props.user &&
-                        <Text h1 style={styles.center}>{this.props.user.firstname} {this.props.user.lastname}</Text>
+                        <Text h1 style={styles.center}>{this.props.user.name}</Text>
                     }
                     <Divider style={styles.divider} />
-                    <Text h4>Email : john.doe@test.fr</Text>
+                    <Text h4>Email : {this.props.user.email}</Text>
                     <View style={styles.socialContainer}>
                         <TouchableOpacity>
                             <SocialIcon
